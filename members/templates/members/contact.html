@@ -1,0 +1,100 @@
+{% extends 'members/base.html' %}
+{% block title %}Contact | My Tennis Club{% endblock %}
+
+{% block content %}
+<style>
+    body {
+        background: linear-gradient(to right, #00c6ff, #0072ff);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #333;
+    }
+
+    .contact-section {
+        max-width: 800px;
+        margin: 80px auto;
+        padding: 60px 50px;
+        background-color: white;
+        border-radius: 20px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        text-align: center;
+    }
+
+    .contact-section h2 {
+        font-size: 38px;
+        margin-bottom: 25px;
+        color: #0072ff;
+    }
+
+    .contact-section p {
+        font-size: 18px;
+        margin-bottom: 20px;
+        color: #555;
+    }
+
+    .contact-section form {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-section input,
+    .contact-section textarea {
+        width: 100%;
+        max-width: 500px;
+        padding: 12px 15px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        outline: none;
+        font-size: 16px;
+        transition: 0.3s;
+    }
+
+    .contact-section input:focus,
+    .contact-section textarea:focus {
+        border-color: #0072ff;
+        box-shadow: 0 0 5px rgba(0,114,255,0.5);
+    }
+
+    .contact-section button {
+        padding: 15px 40px;
+        font-size: 18px;
+        border-radius: 12px;
+        border: none;
+        background-color: #0072ff;
+        color: white;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .contact-section button:hover {
+        background-color: #005bb5;
+        transform: translateY(-2px);
+    }
+
+    /* Optional fade-in animation */
+    .contact-section {
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
+
+<section class="contact-section">
+    <h2>Contact Us</h2>
+    <p>Email: info@isaactennisclub.com</p>
+    <p>Phone: +234 800 000 0000</p> 
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="Your Name">
+        <textarea name="message" rows="5" placeholder="Write your message here..."></textarea>
+        <button type="submit">Send</button>
+    </form>
+</section>
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends 'members/base.html' %}
+{% block title %}Members | My Tennis Club{% endblock %}
+
+{% block content %}
+<style>
+    body {
+        background: linear-gradient(to right, #00c6ff, #0072ff);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #333;
+    }
+
+    .members-section {
+        max-width: 900px;
+        margin: 80px auto;
+        padding: 60px 50px;
+        background-color: white;
+        border-radius: 20px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        text-align: center;
+    }
+
+    .members-section h2 {
+        font-size: 38px;
+        margin-bottom: 30px;
+        color: #0072ff;
+    }
+
+    .members-section ul {
+        list-style-type: none;
+        padding: 0;
+        margin-bottom: 30px;
+    }
+
+    .members-section ul li {
+        font-size: 18px;
+        line-height: 2;
+        color: #555;
+        border-bottom: 1px solid #eee;
+        padding: 10px 0;
+    }
+
+    .members-section ul li:last-child {
+        border-bottom: none;
+    }
+
+    .members-section p {
+        font-size: 18px;
+        color: #0072ff;
+        font-weight: 600;
+    }
+
+    /* Optional: subtle fade-in animation */
+    .members-section {
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
+
+<section class="members-section">
+    <h2>Our Members</h2>
+    <ul>
+        <li>Isaac Godwin — Pro Level</li>
+        <li>Mary Smith — Intermediate</li>
+        <li>James Lee — Beginner</li>
+        <li>Sarah Johnson — Advanced</li>
+    </ul>
+    <p>Want to be featured? Join the club today!</p>
+</section>
+{% endblock %}

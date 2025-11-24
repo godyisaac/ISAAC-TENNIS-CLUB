@@ -1,0 +1,145 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Isaac Tennis Club{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <style>
+    /* ===================== Header / Navbar ===================== */
+    header {
+        background-color: #0072ff;
+        padding: 20px 0;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .header-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        font-size: 26px;
+        font-weight: bold;
+        color: white;
+    }
+
+    ul.topnav {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    ul.topnav li {
+        float: left; /* default float left */
+    }
+
+    ul.topnav li.right {
+        float: right; /* float this item right */
+    }
+
+    ul.topnav li a {
+        display: block;
+        color: white;
+        background-color: #0072ff;
+        padding: 10px 20px;
+        text-decoration: none;
+        font-weight: 600;
+        border-radius: 8px;
+        transition: 0.3s;
+    }
+
+    ul.topnav li a:hover {
+        background-color: #005bb5;
+    }
+
+    /* Responsive: stack links vertically on small screens */
+    @media screen and (max-width: 768px) {
+        ul.topnav li, ul.topnav li.right {
+            float: none;
+            width: 100%;
+        }
+
+        ul.topnav li a {
+            text-align: center;
+            margin-bottom: 5px;
+        }
+    }
+/* ===================== Footer ===================== */
+footer {
+    background-color: #0072ff; /* Matches header */
+    padding: 30px 0;
+    color: white;
+    font-weight: 500;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    text-align: center;
+    border-radius: 12px;
+    background-color: #ffffff; /* Optional: container background */
+    color: #0072ff; /* Text color inside container */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Footer links (optional) */
+.footer-container a {
+    color: #0072ff;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: 0.3s;
+}
+
+.footer-container a:hover {
+    text-decoration: underline;
+    color: #005bb5;
+}
+
+/* Responsive Footer */
+@media screen and (max-width: 768px) {
+    .footer-container {
+        width: 90%;
+        padding: 20px 15px;
+        font-size: 14px;
+    }
+}
+
+
+
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="logo">🎾 Isaac Tennis Club</div>
+        <ul class="topnav">
+            <li><a class="active" href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'members' %}">Members</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+            <li class="right"><a href="{% url 'login' %}">Login</a></li>
+        </ul>
+    </div>
+</header>
+
+<main class="content">
+    {% block content %}{% endblock %}
+</main>
+
+<footer>
+    <div class="footer-container">
+        <p>© 2025 Isaac Tennis Club. All rights reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>

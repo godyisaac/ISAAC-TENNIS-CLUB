@@ -1,0 +1,106 @@
+{% extends 'members/base.html' %}
+{% block title %}Join Now | My Tennis Club{% endblock %}
+
+{% block content %}
+<style>
+    body {
+        background: linear-gradient(to right, #00c6ff, #0072ff);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #333;
+    }
+
+    .join-section {
+        max-width: 700px;
+        margin: 80px auto;
+        padding: 50px 40px;
+        background-color: white;
+        border-radius: 20px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        text-align: center;
+    }
+
+    .join-section h2 {
+        font-size: 36px;
+        margin-bottom: 30px;
+        color: #0072ff;
+    }
+
+    .join-section form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .join-section input,
+    .join-section select,
+    .join-section textarea {
+        width: 100%;
+        max-width: 500px;
+        padding: 12px 15px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+        outline: none;
+        transition: 0.3s;
+    }
+
+    .join-section input:focus,
+    .join-section select:focus,
+    .join-section textarea:focus {
+        border-color: #0072ff;
+        box-shadow: 0 0 5px rgba(0,114,255,0.5);
+    }
+
+    .join-section button {
+        padding: 15px 40px;
+        font-size: 18px;
+        border-radius: 12px;
+        border: none;
+        background-color: #0072ff;
+        color: white;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.3s;
+        margin-top: 10px;
+    }
+
+    .join-section button:hover {
+        background-color: #005bb5;
+        transform: translateY(-2px);
+    }
+
+    .join-section a {
+        display: inline-block;
+        margin-top: 20px;
+        color: #0072ff;
+        text-decoration: none;
+        font-weight: 500;
+        transition: 0.3s;
+    }
+
+    .join-section a:hover {
+        text-decoration: underline;
+    }
+
+    /* Optional: subtle fade-in animation */
+    .join-section {
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
+
+<section class="join-section">
+    <h2>Join as a Member</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Join Now</button>
+    </form>
+    <a href="{% url 'home' %}">Back to Home</a>
+</section>
+{% endblock %}

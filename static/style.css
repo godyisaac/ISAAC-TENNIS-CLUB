@@ -1,0 +1,213 @@
+/* ===================== Reset & Base ===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    color: #333;
+    min-height: 100vh;
+}
+
+/* ===================== Header ===================== */
+header {
+    background-color: #0072ff;
+    padding: 20px 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.header-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: white;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links li {
+    display: inline-block;
+}
+
+.nav-links a {
+    display: block;
+    padding: 10px 20px;
+    background-color: white;
+    color: #0072ff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #005bb5;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* ===================== Sections / Cards ===================== */
+section {
+    max-width: 900px;
+    margin: 80px auto;
+    padding: 60px 50px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+section h2 {
+    font-size: 38px;
+    margin-bottom: 25px;
+    color: #0072ff;
+}
+
+section p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* ===================== Buttons ===================== */
+.btn,
+section button {
+    display: inline-block;
+    padding: 15px 40px;
+    margin: 10px 5px;
+    font-size: 18px;
+    border-radius: 12px;
+    border: none;
+    background-color: #0072ff;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.btn:hover,
+section button:hover {
+    background-color: #005bb5;
+    transform: translateY(-2px);
+}
+
+/* ===================== Forms ===================== */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    border-color: #0072ff;
+    box-shadow: 0 0 5px rgba(0,114,255,0.5);
+}
+
+form a {
+    display: inline-block;
+    margin-top: 20px;
+    color: #0072ff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+form a:hover {
+    text-decoration: underline;
+}
+
+/* ===================== Member List ===================== */
+ul.members-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+ul.members-list li {
+    font-size: 18px;
+    line-height: 2;
+    color: #555;
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+}
+
+ul.members-list li:last-child {
+    border-bottom: none;
+}
+
+/* ===================== Footer ===================== */
+footer {
+    background-color: #0072ff;
+    padding: 30px 0;
+}
+
+.footer-container {
+    background-color: white;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    color: #0072ff;
+    font-weight: 500;
+}
+
+/* ===================== Animations ===================== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===================== Responsive ===================== */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .nav-links a {
+        margin: 5px 0;
+    }
+}

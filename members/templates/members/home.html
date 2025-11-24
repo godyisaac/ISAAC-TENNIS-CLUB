@@ -1,0 +1,62 @@
+{% extends 'members/base.html' %}
+
+{% block title %}Home | Isaac Tennis Club{% endblock %}
+
+{% block content %}
+<style>
+    body {
+        background: linear-gradient(to left, #ca027d, #0072ff);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #333;
+    }
+
+    section {
+        max-width: 800px;
+        margin: 80px auto;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 50px 40px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    section h2 {
+        font-size: 36px;
+        margin-bottom: 20px;
+        color: #0072ff;
+    }
+
+    section p {
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 40px;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 15px 30px;
+        margin: 10px;
+        font-size: 16px;
+        border-radius: 10px;
+        text-decoration: none;
+        color: white;
+        background-color: #0072ff;
+        transition: 0.3s;
+        border: none;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background-color: #005bb5;
+    }
+</style>
+
+<section>
+    <h2>Welcome to Isaac Tennis Club!</h2>
+    <p>Join our friendly community of tennis lovers. Whether you’re a beginner or a pro, you’ll find partners, tournaments, and lessons here.</p>
+
+    <a href="{% url 'join' %}" class="btn">Join Now</a>
+    <a href="{% url 'register' %}" class="btn">Sign Up</a>
+    <a href="{% url 'login' %}" class="btn">Login</a>
+</section>
+{% endblock %}
